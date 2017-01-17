@@ -67,6 +67,12 @@ export function getJestConfig(root) {
   }
 }
 
+declare global {
+  interface ObjectConstructor {
+    assign: any
+  }
+}
+
 export function getTSConfig(globals, collectCoverage: boolean = false) {
   let config = (globals && globals.__TS_CONFIG__) ? globals.__TS_CONFIG__ : undefined;
   if (config === undefined) {
